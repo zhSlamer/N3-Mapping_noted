@@ -244,7 +244,9 @@ class Mapper():
 
             T0 = get_time()
             # sampling
+            # 数据预处理
             _, frame_origin_torch, frame_pc_s_torch, frame_normal_torch, frame_label_torch = self.dataset[frame_id]
+            # 降采样
             samples = self.sampler.sampling(frame_pc_s_torch, 
                                             frame_origin_torch, 
                                             frame_normal_torch, 
